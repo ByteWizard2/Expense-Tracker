@@ -35,3 +35,36 @@ body {
 .e-bigger {
     font-size: x-large;
 }
+/* Radio Button Group */
+.e-btn-group.custom-rbt-group {
+    width: 100%;
+    display: flex; /* Ensure buttons align nicely */
+}
+
+    .e-btn-group.custom-rbt-group .e-btn {
+        width: 50%;
+        text-align: center; /* Center the text in labels */
+    }
+
+.custom-rbt-group label.e-btn {
+    box-shadow: none !important;
+    border: 1px solid #fff;
+    background-color: rgb(34, 43, 51);
+    color: #fff;
+    padding: 5px; /* Add some padding for better appearance */
+    cursor: pointer; /* Indicate clickability */
+    margin: 0; /* Remove any default margins */
+}
+
+.e-btn-group.custom-rbt-group input:checked + label.e-btn {
+    background-color: #fff;
+    color: #212b36;
+    border: 1px solid #fff;
+}
+
+/* Hide the actual radio inputs visually */
+.e-btn-group.custom-rbt-group input[type="radio"] {
+    opacity: 0; /* Hide radio button but keep it functional */
+    position: absolute; /* Take it out of flow */
+}
+  
