@@ -10,8 +10,9 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="AddOrEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="CategoryId" value="CategoryId"/>
             <div class="mb-3">
                 <div class="e-btn-group custom-rbt-group">
                     <!-- Fixed class syntax -->
@@ -30,9 +31,7 @@
                 <ejs-textbox id="icon" placeholder="Icon" ejs-for="Icon" floatLabelType="Always"></ejs-textbox>
                 <span asp-validation-for="Icon" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            <ejs-button class="e-success" id="submit" type="submit" content="Submit"></ejs-button>
         </form>
     </div>
 </div>
