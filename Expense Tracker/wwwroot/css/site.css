@@ -1,45 +1,57 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
-  font-family: "Inter"
+    position: relative;
+    min-height: 100%;
+    font-family: "Inter";
 }
-*:not(.fa-solid):not(.fa):not(.e-icons){
-    font-family:"Inter"
+
+*:not(.fa-solid):not(.fa):not(.e-icons) {
+    font-family: "Inter";
 }
 
 body {
-  margin-bottom: 60px;
-  background-color: #12161d;
-  color: #fff
+    margin-bottom: 6px;
+    background-color: #12161d;
+    color: #fff;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
 }
 
+/* Adjusted to prevent overly large text */
 .e-bigger {
-    font-size: x-large;
+    font-size: large; /* Changed from x-large to large for better control */
 }
 
+/* Main content adjustment */
+.main-content {
+    margin-left: 290px;
+}
+
+/* Ensure headings don't grow too large */
+h1.display-6 {
+    font-size: 1.5rem; /* Override Bootstrap's default to a smaller size */
+    line-height: 1.2;
+}
 /*BreadCrumb*/
 .e-breadcrumb a, .e-breadcrumb a:hover {
     text-decoration: none !important;
@@ -167,7 +179,74 @@ body {
 }
 
 
-/*Widget*/
+/*SideBar*/
+#sidebar {
+    background-color: #12161d;
+    border-right: 1px dashed rgba(75,82,85,0.24);
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+    #sidebar .e-menu-wrapper {
+        width: 100%;
+        background-color: inherit;
+    }
+
+#sidebar-toggler {
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+    #sidebar-toggler:hover {
+        cursor: pointer;
+        background-color: #48545f14;
+        transform: scale(1.05) translateZ(0px);
+    }
+
+#sidebar.e-close {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    #sidebar.e-close .app-logo {
+        display: none;
+    }
+
+    #sidebar.e-close .e-anchor-wrap, #sidebar.e-close .e-menu-item.e-menu-caret-icon {
+        font-size: 0px;
+    }
+
+    #sidebar.e-close .profile-wrapper .titles {
+        display: none !important;
+    }
+
+
+    #sidebar.e-open .e-anchor-wrap,
+    #sidebar.e-close .e-menu-icon, #sidebar.e-open .e-menu-icon {
+        visibility: visible;
+    }
+
+#sidebar.e-open .profile-wrapper .titles, #sidebar.e-open .app-logo {
+    display: flex;
+}
+
+#sidebar.e-sidebar.e-right.e-close {
+    visibility: visible;
+    transform: translateX(0%);
+}
+
+#sidebar.e-open #sidebar-toggler:before {
+    content: '\f100'
+}
+
+#sidebar.e-close #sidebar-toggler:before {
+    content: '\f101'
+}
+
+
+/* Widget adjustments */
 .widget {
     border-radius: 1rem;
     background-color: #1a222b;
@@ -175,13 +254,14 @@ body {
 
     .widget.summary > div:first-child {
         background-color: #222b33;
-        padding: 1rem;
+        padding: 1rem; /* Reduced from p-5 for better fit */
         border-top-left-radius: 1rem;
         border-bottom-left-radius: 1rem;
     }
 
         .widget.summary > div:first-child i {
             font-weight: bold;
+            font-size: 1.5rem; /* Control icon size */
         }
 
     .widget.income > div:first-child {

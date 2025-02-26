@@ -20,15 +20,15 @@
                         <input type="radio" id="radiomiddle" name="Type" value="Income" checked="@(Model.Type == "Income")" />
                         <label class="e-btn" for="radiomiddle">Income</label>
                     </div>
-                    <span asp-validation-for="Type" class="text-danger"></span>
+                   
                 </div>
                 <div class="mb-3">
                     <ejs-textbox id="title" placeholder="Title" ejs-for="Title" floatLabelType="Always"></ejs-textbox>
-                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <span asp-validation-for="Title" class="text-danger fs-6"></span>
                 </div>
                 <div class="mb-3">
                     <ejs-textbox id="icon" placeholder="Icon" ejs-for="Icon" floatLabelType="Always"></ejs-textbox>
-                    <span asp-validation-for="Icon" class="text-danger"></span>
+               
                 </div>
                 <ejs-button class="e-success" id="submit" type="submit" content="Submit"></ejs-button>
             </form>
@@ -43,8 +43,8 @@
 </div>
 
 
-@section Scripts {
+@* @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+} *@
