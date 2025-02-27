@@ -8,10 +8,6 @@ html {
     }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
 html {
     position: relative;
     min-height: 100%;
@@ -19,39 +15,27 @@ html {
 }
 
 *:not(.fa-solid):not(.fa):not(.e-icons) {
-    font-family: "Inter";
+    font-family: "Inter"
 }
 
 body {
-    margin-bottom: 6px;
+    margin-bottom: 60px;
     background-color: #12161d;
     color: #fff;
+    overflow: hidden;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
-    text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-    text-align: start;
-}
-
-/* Adjusted to prevent overly large text */
 .e-bigger {
-    font-size: large; /* Changed from x-large to large for better control */
+    font-size: x-large;
 }
 
-/* Main content adjustment */
 .main-content {
     margin-left: 290px;
+    overflow-y: auto;
+    height: 92vh;
 }
 
-/* Ensure headings don't grow too large */
-h1.display-6 {
-    font-size: 1.5rem; /* Override Bootstrap's default to a smaller size */
-    line-height: 1.2;
-}
+
 /*BreadCrumb*/
 .e-breadcrumb a, .e-breadcrumb a:hover {
     text-decoration: none !important;
@@ -68,42 +52,6 @@ h1.display-6 {
 .no-a-decoration, .no-a-decoration:hover {
     text-decoration: none;
     color: inherit;
-}
-
-
-
-
-/* Radio Button Group */
-.e-btn-group.custom-rbt-group {
-    width: 100%;
-    display: flex; /* Ensure buttons align nicely */
-}
-
-    .e-btn-group.custom-rbt-group .e-btn {
-        width: 50%;
-        text-align: center; /* Center the text in labels */
-    }
-
-.custom-rbt-group label.e-btn {
-    box-shadow: none !important;
-    border: 1px solid #fff;
-    background-color: rgb(34, 43, 51);
-    color: #fff;
-    padding: 5px; /* Add some padding for better appearance */
-    cursor: pointer; /* Indicate clickability */
-    margin: 0; /* Remove any default margins */
-}
-
-.e-btn-group.custom-rbt-group input:checked + label.e-btn {
-    background-color: #fff;
-    color: #212b36;
-    border: 1px solid #fff;
-}
-
-/* Hide the actual radio inputs visually */
-.e-btn-group.custom-rbt-group input[type="radio"] {
-    opacity: 0; /* Hide radio button but keep it functional */
-    position: absolute; /* Take it out of flow */
 }
 
 /*Grid*/
@@ -178,6 +126,130 @@ h1.display-6 {
     border-bottom-right-radius: 5px;
 }
 
+/*Logo*/
+.logo-wrapper {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.app-logo {
+    padding: 10px 10px;
+}
+
+/*Menu*/
+#menu {
+    width: 100% !important;
+    background-color: inherit;
+    overflow: hidden;
+}
+
+    #menu .e-menu-item:not(.e-separator) {
+        height: 50px;
+        border-radius: 4px;
+    }
+
+    #menu .e-menu-item {
+        box-sizing: border-box;
+    }
+
+        #menu .e-menu-item a {
+            width: 100%;
+            color: rgb(171, 163, 152);
+            font-weight: 300;
+            padding: 7px 5px;
+            box-sizing: border-box;
+        }
+
+    #menu .e-anchor-wrap {
+        display: inline-block;
+    }
+
+    #menu .e-menu-item .e-anchor-wrap span.e-menu-icon {
+        color: rgb(171, 163, 152);
+    }
+
+    #menu .e-menu-item.e-separator {
+        border: none;
+        margin: 5px 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        color: #65da41;
+    }
+
+        #menu .e-menu-item.e-separator:not(:first-child) {
+            margin-top: 35px;
+        }
+
+
+
+/*Navbar*/
+nav.navbar {
+    background-color: rgba(18, 22, 29);
+}
+
+    nav.navbar i {
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+        nav.navbar i:hover, nav.navbar img:hover {
+            cursor: pointer;
+            background-color: #48545f14;
+            transform: scale(1.05) translateZ(0px);
+        }
+
+nav.navbar {
+    margin-left: 290px;
+}
+
+/*Profile Pic*/
+img.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(72, 84, 95, 0.12);
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+    .profile-wrapper .titles {
+        line-height: 1;
+    }
+
+/*Radio Button Group*/
+.e-btn-group.custom-rbt-group {
+    width: 100%;
+}
+
+    .e-btn-group.custom-rbt-group .e-btn {
+        width: 50%;
+    }
+
+.custom-rbt-group label.e-btn {
+    box-shadow: none !important;
+    border: 1px solid #fff;
+    background-color: rgb(34 43 51);
+    color: #fff;
+}
+
+.e-btn-group.custom-rbt-group input:checked + label.e-btn {
+    background-color: #fff;
+    color: #212b36;
+    border: 1px solid #fff;
+}
 
 /*SideBar*/
 #sidebar {
@@ -245,8 +317,7 @@ h1.display-6 {
     content: '\f101'
 }
 
-
-/* Widget adjustments */
+/*Widget*/
 .widget {
     border-radius: 1rem;
     background-color: #1a222b;
@@ -254,14 +325,13 @@ h1.display-6 {
 
     .widget.summary > div:first-child {
         background-color: #222b33;
-        padding: 1rem; /* Reduced from p-5 for better fit */
+        padding: 1rem;
         border-top-left-radius: 1rem;
         border-bottom-left-radius: 1rem;
     }
 
         .widget.summary > div:first-child i {
             font-weight: bold;
-            font-size: 1.5rem; /* Control icon size */
         }
 
     .widget.income > div:first-child {

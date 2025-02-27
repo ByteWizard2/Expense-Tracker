@@ -96,6 +96,13 @@ namespace Expense_Tracker.Controllers
 
                                       };
 
+            //Recent Transaction
+            ViewBag.RecentTransaction = await _context.Transactions
+                .Include(i => i.Category)
+                .OrderByDescending(j => j.Date)
+                .Take(5)
+                .ToListAsync();
+
             return View();
         }
     }
